@@ -5,13 +5,6 @@ import csv
 ## Converting .xlsx (Excel) files into .csv 
 import pandas as pd
 
-"""
-def read_func():
-    filename = input('Enter the csv ...')
-    if filename:
-        with open(filename) as csvfile:
-"""
-
 xlsx_file = "example.xlsx"
 inp_file = "example.csv"
 out_file_pattern = "modified_example.csv"
@@ -33,23 +26,10 @@ with open(inp_file, 'r', newline='') as f:
         writer = csv.writer(out_f)
 
         for row in f:
-            line = row.split()
-            writer.writerow(line)
+            line = row.split(sep = ',')     #splits current row into an array, can be used to modify or compare data
+            writer.writerow(line)           #writes back the array into the row
 
-# Get Excel File
-# Convert to CSV
-    # How to normalize it?
-        # Make a counter -> count number of commas? -> use that to get each element of the row -> write into new csv file (which becomes the modified version)
-        # You can access string characters like an array
-        # Make a vector -> get the line -> loop(use the split function)
-        #                                   -> write to new file -> nextline when char is comma
+
 # Read the Data -- 
     # Different styles (Data can start differently, what are some common patterns?) -> Different functions?
-# pyautogui to input keystrokes and keypresses
-
-"""
-writerows(rows)
-
-for row in rows:
-    writerow(row)
-"""
+# pyautogui/similar software to input keystrokes and keypresses
